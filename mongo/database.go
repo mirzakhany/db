@@ -29,7 +29,7 @@ import (
 	"sync"
 	"time"
 
-	"gopkg.in/mgo.v2"
+	"github.com/globalsign/mgo"
 	"upper.io/db.v3"
 )
 

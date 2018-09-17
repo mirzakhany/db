@@ -28,8 +28,8 @@ import (
 
 	"reflect"
 
-	"gopkg.in/mgo.v2"
-	"gopkg.in/mgo.v2/bson"
+	"github.com/globalsign/mgo"
+	"github.com/globalsign/mgo/bson"
 	"upper.io/db.v3"
 )
 
@@ -294,7 +294,7 @@ func (col *Collection) Insert(item interface{}) (interface{}, error) {
 
 // Exists returns true if the collection exists.
 func (col *Collection) Exists() bool {
-	query := col.parent.database.C(`system.namespaces`).Find(map[string]string{`name`: fmt.Sprintf(`%s.%s`, col.parent.database.Name, col.collection.Name)})
+	query := col.collection.Database.C(`system.namespaces`).Find(map[string]string{`name`: fmt.Sprintf(`%s.%s`, col.collection.Database.Name, col.collection.Name)})
 	count, _ := query.Count()
 	if count > 0 {
 		return true

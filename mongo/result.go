@@ -30,8 +30,8 @@ import (
 
 	"encoding/json"
 
-	"gopkg.in/mgo.v2"
-	"gopkg.in/mgo.v2/bson"
+	"github.com/globalsign/mgo"
+	"github.com/globalsign/mgo/bson"
 	"upper.io/db.v3"
 
 	"upper.io/db.v3/internal/immutable"
